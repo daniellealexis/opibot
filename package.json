@@ -1,0 +1,25 @@
+{
+  "name": "opibot",
+  "version": "1.0.0",
+  "description": "Slackbot for getting suggestions about ANYTHING from your team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniellealexis/opibot.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniellealexis/opibot/issues"
+  },
+  "homepage": "https://github.com/daniellealexis/opibot#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "knex": "^0.14.0",
+    "mysql": "^2.15.0"
+  }
+}
