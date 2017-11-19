@@ -1,0 +1,20 @@
+
+exports.up = function(knex, Promise) {
+    return knex.schema.createTable('list_item', function(table) {
+        table.increments('id').primary();
+
+        table.string('list_id')
+            .index()
+            .notNullable();
+
+        table.string('user_id');
+
+        table.string('text').notNullable();
+
+        table.timestamps(false, true);
+    });
+};
+
+exports.down = function(knex, Promise) {
+    return knex.schema.dropTableIfExists('list_item');
+};

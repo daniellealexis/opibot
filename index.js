@@ -12,6 +12,7 @@ app.post('', client.createList);
 app.post('', client.getSuggestion);
 app.post('', client.submitSuggestion);
 app.post('', client.viewAllLists);
+app.post('help', client.viewAllCommands);
 
 app.listen(7654, () => {
   console.log('Server running on http://localhost:7654');
