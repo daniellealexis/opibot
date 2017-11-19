@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const client = require('./client');
+const client = require('./middleware/client');
 
 const app = express();
 
