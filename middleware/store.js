@@ -1,4 +1,4 @@
-const knex = require('knex')(require('./knexfile'));
+const knex = require('knex')(require('../knexfile'));
 
 module.exports = {
     /**
@@ -12,41 +12,41 @@ module.exports = {
     },
 
     /**
-     * Lists
+     * Categories
      */
-    createList({ team_id, user_id, name }) {
-        return knex('list').insert({
+    createCategory({ team_id, user_id, name }) {
+        return knex('category').insert({
             team_id,
             user_id,
             name,
         });
     },
 
-    getListIdByName({ team_id, name }) {
-        return knex('list').where({
+    getCategoryIdByName({ team_id, name }) {
+        return knex('category').where({
             team_id,
             name,
         }).select('id');
     },
 
-    getAllLists({ team_id }) {
-        return knex('list')
+    getAllCategories({ team_id }) {
+        return knex('category')
             .where({ team_id })
             .select('name');
     },
 
     /**
-     * List Items
+     * Suggestions
      */
-    addListItem({ list_id, user_id, text }) {
-        return knex('list_item').insert({
-            list_id,
+    addSuggestion({ category_id, user_id, text }) {
+        return knex('suggestion').insert({
+            category_id,
             user_id,
             text,
         });
     },
 
-    getListItem({ list_id, user_id }) {
+    getSuggestion({ category_id, user_id }) {
         // get random, that doesnt have user_id
     },
 }

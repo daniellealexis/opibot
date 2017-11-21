@@ -1,9 +1,9 @@
 
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable('list_item', function(table) {
+    return knex.schema.createTable('suggestion', function(table) {
         table.increments('id').primary();
 
-        table.string('list_id')
+        table.string('category_id')
             .index()
             .notNullable();
 
@@ -16,5 +16,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('list_item');
+    return knex.schema.dropTableIfExists('suggestion');
 };

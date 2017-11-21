@@ -13,21 +13,21 @@ module.exports = {
         res.status(200).send(msg.createdTeam());
     },
 
-    createList: function(req, res) {
+    createCategory: function(req, res) {
         const data = req.body;
-        const listName = data.text;
+        const categoryName = data.text;
 
         // parse data.text to get list name
         //
         // check that list doesnt already exist
 
-        store.createList({
+        store.createCategory({
             team_id: data.team_id,
             user_id: data.user_id,
-            name: listName,
+            name: categoryName,
         });
 
-        res.status(200).send(msg.createdList(listName));
+        res.status(200).send(msg.createdCategory(categoryName));
     },
 
     getSuggestion: function(req, res) {
@@ -40,9 +40,9 @@ module.exports = {
         res.status(200).send(msg.submittedSuggestion());
     },
 
-    viewAllLists: function(req, res) {
+    viewAllCategories: function(req, res) {
         const data = req.body;
-        res.status(200).send(msg.showAllLists());
+        res.status(200).send(msg.showAllCategories());
     },
 
     viewAllCommands: function(req, res) {
