@@ -24,3 +24,5 @@ Slackbot for getting suggestions from your team on ANYTHING!
 8. Connect to database in DB software. Reference `knexfile` for values. Don't leave out the database name. Default port is 3306.
 
 9. Migrate your new database: `knex migrate:latest`
+
+10. Start node server. `node .` Will be on `http://localhost:7654`
