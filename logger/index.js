@@ -5,10 +5,11 @@
 // brew services start mysql
 // DIFFERENT PORT THAN 3306 FOR DB
 
-// require fs
-const BASE_LOG_PATH = './logs';
-const TEST_PATH = BASE_LOG_PATH + '/errors.txt';
-const ERROR_PATH = BASE_LOG_PATH + '/tests.txt';
+var fs = require('fs');
+var path = require('path');
+
+const TEST_PATH = path.join(__dirname, 'logger', 'logs', 'tests.txt');
+const ERROR_PATH = path.join(__dirname, 'logger', 'logs', 'errors.txt');
 
 function log(path, text) {
     const logText = formatLog(text);
