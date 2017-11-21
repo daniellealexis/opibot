@@ -7,7 +7,7 @@ Slackbot for getting suggestions from your team on ANYTHING!
 
 2. Install Node if not already installed. Version >= 7
 
-3. Install mySQL if not already installed.
+3. Install mySQL if not already installed. Start it.
 
 4. Update password on your local database: `mysqladmin -u root password "password"`. Fill in with values you want.
 
