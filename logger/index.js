@@ -1,34 +1,32 @@
-// https://nodejs.org/docs/latest/api/fs.html
-//
-//
-//
-// brew services start mysql
-// DIFFERENT PORT THAN 3306 FOR DB
-
 var fs = require('fs');
 var path = require('path');
 
-const TEST_PATH = path.join(__dirname, 'logger', 'logs', 'tests.txt');
-const ERROR_PATH = path.join(__dirname, 'logger', 'logs', 'errors.txt');
+const TEST_PATH = path.join(__dirname, 'logs', 'tests.txt');
+const ERROR_PATH = path.join(__dirname, 'logs', 'errors.txt');
 
-function log(path, text) {
+function writeLog(path, text) {
     const logText = formatLog(text);
-    // fs.open(path, 'w', () => {
-    //  //write the stuffs
-    // });
+    fs.appendFile(path, logText, (err) => {
+        if (err) throw err;
+    });
+}
+
+function generateLogFunction(path) {
+    return text => { writeLog(path, formatLogText(text)); };
 }
 
 function formatLog(text) {
-    const now = new Date().toGMTString();
-    return `${now}: ${text}\n\n`;
+    const now = new Date().toUTCString();
+    return now + ': ' + text + '\r\n';
+}
+
+function formatLogText(logText) {
+    return typeof logText === 'object' ?
+        JSON.stringify(logText, null, 2) :
+        logText;
 }
 
 module.exports = {
-    test(logText) {
-        log(TEST_PATH, logText);
-    },
-
-    error(logText) {
-        log(ERROR_PATH, logText);
-    }
+    test: generateLogFunction(TEST_PATH),
+    error: generateLogFunction(ERROR_PATH),
 }
