@@ -11,15 +11,15 @@ module.exports = {
 
     },
 
-    createdList(listName) {
+    createdCategory(categoryName) {
 
     },
 
-    showAllLists(lists) {
+    showAllCategories(categories) {
 
     },
 
-    showSuggestion(text, listName, userId) {
+    showSuggestion(text, categoryName, userId) {
 
     },
 

@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable('list', function(table) {
+    return knex.schema.createTable('category', function(table) {
         table.increments('id').primary();
 
         table.string('team_id')
@@ -16,6 +16,6 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('list');
+    return knex.schema.dropTableIfExists('category');
 };
 
