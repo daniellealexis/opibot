@@ -20,21 +20,30 @@ module.exports = {
     },
 
     showSuggestion(text, categoryName, userId) {
-
+        return {
+            response_type: "ephemeral",
+            text: `Get suggestion from ${text} category`,
+        };
     },
 
-    submittedSuggestion() {
-
+    submittedSuggestion(text) {
+        return {
+            response_type: "ephemeral",
+            text: `Submit suggestion on ${text} category`,
+        };
     },
 
     showAllCommands() {
-
-    },
+        return {
+            response_type: "ephemeral",
+            text: "idk",
+        };
+    }, 
 
     genericError() {
-        return JSON.stringify({
+        return {
             response_type: "ephemeral",
             text: "Sorry, there was an error",
-        });
+        };
     }
 };
