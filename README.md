@@ -26,3 +26,7 @@ Slackbot for getting suggestions from your team on ANYTHING!
 9. Migrate your new database: `knex migrate:latest`
 
 10. Start node server. `node .` Will be on `http://localhost:7654`
+
+11. ngrok needed to locally host server as https
+	https://api.slack.com/tutorials/tunneling-with-ngrok
+	Run command 'ngrok.exe http 7654' in the folder that contains the application
